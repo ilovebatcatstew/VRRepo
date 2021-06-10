@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1344230322244854921}
   - component: {fileID: 8495466584175275483}
   - component: {fileID: 4696541018641600876}
-  - component: {fileID: 5655543178221127017}
+  - component: {fileID: 863161081455623363}
   m_Layer: 0
   m_Name: Missile R
   m_TagString: MissilePod
@@ -204,7 +204,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 9.313226e-10, y: 0, z: 0}
---- !u!114 &5655543178221127017
+--- !u!114 &863161081455623363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,13 +213,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4970043768799709868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0e02bb8f7c07945b74300a1e6f26cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e4cb4df99938f54cb8f5d1750251887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   launchObject: {fileID: 4355380726111042708, guid: ff0b98966e930374695fb5b5f65250bd, type: 3}
-  launchInterval: 0.05
-  rows: 10
-  columns: 6
+  objectSpawnPosition: {fileID: 7419362288457522976}
+  cooldown: 10
 --- !u!1 &7186807760759828893
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +652,7 @@ GameObject:
   - component: {fileID: 7363861663146869663}
   - component: {fileID: 7887107533602999141}
   - component: {fileID: 8531367012904928304}
-  - component: {fileID: 9001928499744257545}
+  - component: {fileID: 8876081311038434680}
   m_Layer: 0
   m_Name: Missile L
   m_TagString: MissilePod
@@ -737,7 +736,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 9.313226e-10, y: 0, z: 0}
---- !u!114 &9001928499744257545
+--- !u!114 &8876081311038434680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -746,10 +745,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7578788170737126328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0e02bb8f7c07945b74300a1e6f26cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e4cb4df99938f54cb8f5d1750251887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   launchObject: {fileID: 4355380726111042708, guid: ff0b98966e930374695fb5b5f65250bd, type: 3}
-  launchInterval: 0.05
-  rows: 10
-  columns: 6
+  objectSpawnPosition: {fileID: 1131973406758184478}
+  cooldown: 10

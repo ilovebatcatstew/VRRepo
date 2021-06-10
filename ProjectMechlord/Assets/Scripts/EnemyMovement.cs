@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform playerTransform;
+    public float maintainDistance = 5.0f;
     NavMeshAgent agent;
 
     void Awake()
@@ -22,6 +23,6 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.destination = playerTransform.position - agent.transform.forward * 2.0f;
+        agent.destination = playerTransform.position - agent.transform.forward * maintainDistance;
     }
 }
