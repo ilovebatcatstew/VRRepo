@@ -5,8 +5,8 @@ using UnityEngine;
 public class ShooterButton : MonoBehaviour
 {
 
-    public RocketLauncher launcher1;
-    public RocketLauncher launcher2;
+    public GridLaunch launcher1;
+    public GridLaunch launcher2;
 
 
     // Start is called before the first frame update
@@ -26,8 +26,8 @@ public class ShooterButton : MonoBehaviour
     {
         if (other.tag == "Hand")
         {
-            launcher1.FireRockets();
-            launcher2.FireRockets();
+            //launcher1.FireDaGun();
+            //launcher2.FireDaGun();
         }
     }
 

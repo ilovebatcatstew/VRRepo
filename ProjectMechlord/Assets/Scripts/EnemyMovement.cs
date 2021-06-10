@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform playerTransform;
-    NavMeshAgent agent;
+    NavMeshAgent navAgent;
 
     void Awake()
     {
-        agent = gameObject.GetComponent<NavMeshAgent>();   
+        navAgent = gameObject.GetComponent<NavMeshAgent>();   
     }
 
     // Start is called before the first frame update
@@ -22,6 +22,6 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.destination = playerTransform.position - agent.transform.forward * 2.0f;
+        navAgent.destination = playerTransform.position; //- agent.transform.forward * 2.0f;
     }
 }

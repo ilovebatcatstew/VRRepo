@@ -43,4 +43,17 @@ public class BasicLaunch : MonoBehaviour
             timer = 0;
         }
     }
+
+
+    public void FireDaGun()
+    {
+        if (timer > cooldown)
+        {
+            Instantiate(launchObject, objectSpawnPosition.position, objectSpawnPosition.rotation);
+            timer = 0;
+        }
+
+    }
+
+
 }
