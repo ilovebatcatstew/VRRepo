@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Hitscan : MonoBehaviour
 {
+    public float weaponRange = 10.0f;
+
     Transform gunTransform;
     Mouse mouse;
 
@@ -29,9 +31,9 @@ public class Hitscan : MonoBehaviour
 
             layerMask = ~layerMask;
             RaycastHit hit;
-            if (Physics.Raycast(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward, out hit, 10, layerMask))
+            if (Physics.Raycast(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward, out hit, weaponRange, layerMask))
             {
-                Debug.DrawRay(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward * 10, Color.red);
+                Debug.DrawRay(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward * weaponRange, Color.red);
                 if(hit.collider.tag == "Enemy")
                 {
                     Destroy(hit.transform.gameObject);
@@ -39,7 +41,7 @@ public class Hitscan : MonoBehaviour
             }
             else
             {
-                Debug.DrawRay(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward * 10, Color.white);
+                Debug.DrawRay(gunTransform.position + (gunTransform.forward * (gunTransform.localScale.z * 0.5f)), gunTransform.forward * weaponRange, Color.white);
             }
         }
     }
