@@ -19,6 +19,9 @@ public class FollowCamRot : MonoBehaviour
             thingToMatchRotation.transform.eulerAngles.y,
             0f);
 
-        gameObject.transform.position = thingToMatchRotation.transform.position;
+        gameObject.transform.position = new Vector3(
+            thingToMatchRotation.transform.position.x,
+            gameObject.transform.position.y,
+            thingToMatchRotation.transform.position.z);
     }
 }
