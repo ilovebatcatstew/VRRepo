@@ -106,12 +106,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4355380726111042708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f501ea319e8ef4bb122f334457fe83, type: 3}
+  m_Script: {fileID: 11500000, guid: ac6a3728effced440a8e26c9a80ab872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 0.14
-  range: 0.43
-  explosionRadius: 1
+  projectileSpeed: 1
+  range: 10
+  explosionRadius: 0.5
 --- !u!54 &-2932966441196814597
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,16 +5,26 @@ using UnityEngine;
 public class ShooterButton : MonoBehaviour
 {
 
-    public GridLaunch launcher1;
-    public GridLaunch launcher2;
-
+    BasicLaunch launch;
+    GameObject[] spawnpos;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        spawnpos = GameObject.FindGameObjectsWithTag("MisslePod");
 
+        launch.misslePod1 = spawnpos[0].transform;
+        launch.misslePod2 = spawnpos[1].transform;
+        launch.launchObject = Resources.Load<GameObject>("Prefabs/Projectile");
+    }
+  private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Hand")
+        {
+            launch.FireDaGun();
+            
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -22,13 +32,6 @@ public class ShooterButton : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Hand")
-        {
-            //launcher1.FireDaGun();
-            //launcher2.FireDaGun();
-        }
-    }
+  
 
 }
