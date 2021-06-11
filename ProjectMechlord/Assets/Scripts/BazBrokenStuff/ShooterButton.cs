@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShooterButton : MonoBehaviour
 {
 
-    private BasicLaunch launch;
+    public BasicLaunch launch;
     public GameObject[] spawnpos;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class ShooterButton : MonoBehaviour
         //launch.missilePod2 = spawnpos[1].transform;
         //launch.launchObject = Resources.Load<GameObject>("Prefabs/Projectile");
     }
-  private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Hand")
         {
