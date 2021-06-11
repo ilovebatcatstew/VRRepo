@@ -10,8 +10,8 @@ using UnityEngine.InputSystem;
 public class BasicLaunch : MonoBehaviour
 {
     public GameObject launchObject;
-    public Transform misslePod1;
-    public Transform misslePod2;
+    public Transform missilePod1;
+    public Transform missilePod2;
     
     public float cooldown = 10.0f;
     float timer;
@@ -50,8 +50,8 @@ public class BasicLaunch : MonoBehaviour
     {
         if (timer > cooldown)
         {
-            Instantiate(launchObject, misslePod1.position, misslePod1.rotation);
-            Instantiate(launchObject, misslePod2.position, misslePod2.rotation);
+            Instantiate(launchObject, missilePod1.position, missilePod1.rotation);
+            Instantiate(launchObject, missilePod2.position, missilePod2.rotation);
             timer = 0;
         }
 

@@ -11,10 +11,10 @@ public class ShooterButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnpos = GameObject.FindGameObjectsWithTag("MisslePod");
+        spawnpos = GameObject.FindGameObjectsWithTag("MissilePod");
 
-        launch.misslePod1 = spawnpos[0].transform;
-        launch.misslePod2 = spawnpos[1].transform;
+        launch.missilePod1 = spawnpos[0].transform;
+        launch.missilePod2 = spawnpos[1].transform;
         launch.launchObject = Resources.Load<GameObject>("Prefabs/Projectile");
     }
   private void OnTriggerEnter(Collider other)
