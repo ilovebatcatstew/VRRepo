@@ -70,7 +70,7 @@ public class Hitscan1 : MonoBehaviour
             Debug.DrawRay(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward * 10, Color.white);
         }
 
-        DestroyLineAfterLifetime();
+        StartCoroutine(DestroyLineAfterLifetime());
     }
 
     void ShootLineFromTargetPosition(Vector3 targetPosition, Vector3 direction, float length)
