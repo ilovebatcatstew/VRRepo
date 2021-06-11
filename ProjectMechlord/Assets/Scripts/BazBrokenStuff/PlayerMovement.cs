@@ -50,16 +50,16 @@ public class PlayerMovement : MonoBehaviour
             vel.y = -2f;
         }
 
-        //float xMovement = Input.GetAxis("Horizontal");
-        //float zMovement = Input.GetAxis("Vertical");
-
-        //Vector3 move = transform.forward * zMovement;
-
-        //playerController.Move(move * currentSpeed * Time.deltaTime);
-
-        //vel.y += grav * Time.deltaTime;
-
-        //playerController.Move(vel * Time.deltaTime);
+            //float xMovement = Input.GetAxis("Horizontal");
+            //float zMovement = Input.GetAxis("Vertical");
+            //
+            //Vector3 move = transform.forward * zMovement;
+            //
+            //playerController.Move(move * currentSpeed * Time.deltaTime);
+            //
+            //vel.y += grav * Time.deltaTime;
+            //
+            //playerController.Move(vel * Time.deltaTime);
         }
 
 
