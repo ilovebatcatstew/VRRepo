@@ -13,7 +13,7 @@ public class BasicLaunch : MonoBehaviour
     public Transform missilePod1;
     public Transform missilePod2;
     
-    public float cooldown = 10.0f;
+    public float cooldown = 2f;
     float timer;
 
     Mouse mouse;
@@ -38,11 +38,11 @@ public class BasicLaunch : MonoBehaviour
     private void FixedUpdate()
     {
         timer += Time.deltaTime;
-        if (mouse.rightButton.isPressed && timer > cooldown)
-        {
-            FireDaGun();
-            
-        }
+       // if (mouse.rightButton.isPressed && timer > cooldown)
+       // {
+       //     FireDaGun();
+       //     
+       // }
     }
 
 

@@ -6,7 +6,7 @@ public class ShooterButton : MonoBehaviour
 {
 
     public BasicLaunch launch;
-    public GameObject[] spawnpos;
+    //public GameObject[] spawnpos;
 
     // Start is called before the first frame update
     void Start()
