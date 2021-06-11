@@ -69,6 +69,8 @@ public class Hitscan1 : MonoBehaviour
         {
             Debug.DrawRay(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward * 10, Color.white);
         }
+
+        StartCoroutine(DestroyLineAfterLifetime());
     }
 
     void ShootLineFromTargetPosition(Vector3 targetPosition, Vector3 direction, float length)
@@ -85,6 +87,16 @@ public class Hitscan1 : MonoBehaviour
         bulletLines.SetPosition(0, targetPosition);
         bulletLines.SetPosition(1, endPosition);
 
-        Destroy(bulletLines, 0.2f);
+        
+    }
+    private IEnumerator DestroyLineAfterLifetime()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        DestroyLine();
+    }
+    private void DestroyLine()
+    {
+        bulletLines.positionCount = 0;
     }
 }
