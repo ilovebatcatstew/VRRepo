@@ -5,17 +5,18 @@ using UnityEngine;
 public class ShooterButton : MonoBehaviour
 {
 
-    BasicLaunch launch;
-    GameObject[] spawnpos;
+    private BasicLaunch launch;
+    public GameObject[] spawnpos;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnpos = GameObject.FindGameObjectsWithTag("MissilePod");
+        launch = GetComponent<BasicLaunch>();
+       // spawnpos = GameObject.FindGameObjectsWithTag("MissilePod");
 
-        launch.missilePod1 = spawnpos[0].transform;
-        launch.missilePod2 = spawnpos[1].transform;
-        launch.launchObject = Resources.Load<GameObject>("Prefabs/Projectile");
+        //launch.missilePod1 = spawnpos[0].transform;
+        //launch.missilePod2 = spawnpos[1].transform;
+        //launch.launchObject = Resources.Load<GameObject>("Prefabs/Projectile");
     }
   private void OnTriggerEnter(Collider other)
     {
