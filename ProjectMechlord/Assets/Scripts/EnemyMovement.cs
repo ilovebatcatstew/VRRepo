@@ -7,21 +7,25 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform playerTransform;
     NavMeshAgent navAgent;
+    public float enemySpeed = 10f;
 
     void Awake()
     {
-        navAgent = gameObject.GetComponent<NavMeshAgent>();   
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        navAgent = gameObject.GetComponent<NavMeshAgent>();
+        navAgent.speed = enemySpeed;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        navAgent.destination = playerTransform.position; //- agent.transform.forward * 2.0f;
+        navAgent.SetDestination(playerTransform.position); //- agent.transform.forward * 2.0f;
+
     }
 }
