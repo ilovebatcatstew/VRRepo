@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5143100837606394425}
   - component: {fileID: 7768799682312577106}
   - component: {fileID: 35732390}
+  - component: {fileID: 3360444450388946346}
   m_Layer: 0
   m_Name: EnemyMech3
   m_TagString: Enemy
@@ -69,6 +70,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!136 &3360444450388946346
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932686374423555820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 7.83
+  m_Height: 9.76
+  m_Direction: 1
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!1 &4839330099259370861
 GameObject:
   m_ObjectHideFlags: 0
