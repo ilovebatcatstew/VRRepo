@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight;
     public float grav = -10f;
 
-    public Transform groundCheck;
+    //public Transform groundCheck;
     public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    //public LayerMask groundMask;
 
     Vector3 vel;
 
@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         //Movement Code
         {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && vel.y < 0)
-        {
-            vel.y = -2f;
-        }
+       // isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+       //
+       // if (isGrounded && vel.y < 0)
+       // {
+       //     vel.y = -2f;
+       // }
 
             //float xMovement = Input.GetAxis("Horizontal");
             //float zMovement = Input.GetAxis("Vertical");
