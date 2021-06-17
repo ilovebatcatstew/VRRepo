@@ -10,6 +10,8 @@ public class GridLaunch : MonoBehaviour
     public GameObject launchObject;
     public Transform objectSpawnPosition;
 
+    AudioSource podAudio;
+
     float width;  // Don't touch these, they're container variables
     float height; // Don't touch these, they're container variables
     float length; // Don't touch these, they're container variables
@@ -35,6 +37,7 @@ public class GridLaunch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        podAudio = GetComponent<AudioSource>();
         width = gameObject.transform.localScale.x;
         height = gameObject.transform.localScale.y;
         length = gameObject.transform.localScale.z;
@@ -77,7 +80,7 @@ public class GridLaunch : MonoBehaviour
         Vector3 up = transform.up;
         Vector3 forward = transform.forward;
 
-
+       
         float xOffset = width / columns;
         float yOffset = height / rows;
 
@@ -96,6 +99,7 @@ public class GridLaunch : MonoBehaviour
             {
                 Debug.DrawLine(transform.position + right * (-xStartPos + (x * columnOffset)) + up *(yStartPos - (y * rowOffset)), transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)) + forward, Color.white);
                 Instantiate(launchObject, transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)), gameObject.transform.rotation);
+                podAudio.Play();
                 yield return new WaitForSeconds(launchInterval);
             }
         }

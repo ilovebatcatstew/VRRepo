@@ -14,6 +14,7 @@ public class Hitscan1 : MonoBehaviour
     public float lineWidth = 0.1f;
     public float lineMaxLength = 10f;
 
+    AudioSource gunAudio;
 
     void Awake()
     {
@@ -23,18 +24,22 @@ public class Hitscan1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gunAudio = GetComponent<AudioSource>();
         bulletLines = GetComponent<LineRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Hand")
+        {
+            FireCannons();
 
+        }
     }
 
     public void FireCannons()
     {
-
+        gunAudio.Play();
         int layerMask = 1 << 8;
 
         layerMask = ~layerMask;
