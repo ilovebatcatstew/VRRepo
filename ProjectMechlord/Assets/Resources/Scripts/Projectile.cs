@@ -5,10 +5,13 @@ using UnityEngine;
 // Somewhat functioning projectile.
 public class Projectile : MonoBehaviour
 {
+    AudioSource expAudio;
     public float projectileSpeed = 1.0f;
     public float range = 10.0f;
     public float explosionRadius = 0.5f;
 
+    public ParticleSystem explosion;
+    public GameObject smokeTrailPrefab;
 
 
     float distanceTravelled = 0.0f;
@@ -17,19 +20,31 @@ public class Projectile : MonoBehaviour
 
     void Awake()
     {
-        collider = gameObject.GetComponent<BoxCollider>();   
+        expAudio = GetComponent<AudioSource>();
+        expAudio.loop = false;
+        float explosionSize = explosion.shape.radius;
+        explosionSize = explosionRadius;
+        collider = gameObject.GetComponent<BoxCollider>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         
+        float length = transform.localScale.z;
+
+        smokeTrailPrefab.transform.localPosition = new Vector3(0, 0, -0.5f);
+
+        Instantiate(smokeTrailPrefab, gameObject.transform);
+
+        //smokeTrailPrefab.transform.parent = gameObject.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(distanceTravelled >= range)
+        
+        if (distanceTravelled >= range)
         {
             Destroy(gameObject);
         }
@@ -37,7 +52,13 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        distanceTravelled += Time.deltaTime * projectileSpeed; 
+        smokeTrailPrefab.transform.up = gameObject.transform.up;
+        smokeTrailPrefab.transform.forward = gameObject.transform.forward;
+        smokeTrailPrefab.transform.right = gameObject.transform.right;
+
+        distanceTravelled += Time.deltaTime * projectileSpeed;
+
+
 
         gameObject.transform.position += gameObject.transform.forward * projectileSpeed;
 
@@ -47,6 +68,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
+        expAudio.Play();
+
         Collider[] collisions = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider hit in collisions)
         {
@@ -58,7 +82,6 @@ public class Projectile : MonoBehaviour
         
         if(!other.gameObject.CompareTag("Missile"))
         {
-        //    Destroy(gameObject);
             if(!other.gameObject.CompareTag("MissilePod"))
             {
                 Destroy(gameObject);

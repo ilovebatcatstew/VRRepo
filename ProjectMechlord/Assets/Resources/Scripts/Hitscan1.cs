@@ -39,10 +39,11 @@ public class Hitscan1 : MonoBehaviour
 
         layerMask = ~layerMask;
         RaycastHit hit;
-        
+        ShootLineFromTargetPosition(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward, lineMaxLength);
+        ShootLineFromTargetPosition(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward, lineMaxLength);
+
         if (Physics.Raycast(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward, out hit, 10, layerMask))
         {
-            ShootLineFromTargetPosition(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward, lineMaxLength);
             Debug.DrawRay(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward * 10, Color.red);
             if (hit.collider.tag == "Enemy")
             {
@@ -58,7 +59,6 @@ public class Hitscan1 : MonoBehaviour
         if (Physics.Raycast(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward, out hit2, 10, layerMask))
         {
 
-            ShootLineFromTargetPosition(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward, lineMaxLength);
             Debug.DrawRay(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward * 10, Color.red);
             if (hit2.collider.tag == "Enemy")
             {
@@ -83,9 +83,9 @@ public class Hitscan1 : MonoBehaviour
         {
             endPosition = raycastHit.point;
         }
-
+        Vector3 temp = new Vector3(15.0f, 0, 0);
         bulletLines.SetPosition(0, targetPosition);
-        bulletLines.SetPosition(1, endPosition);
+        bulletLines.SetPosition(1, (targetPosition += temp));
 
         
     }

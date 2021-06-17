@@ -5,13 +5,14 @@ using UnityEngine;
 public class ShooterButton : MonoBehaviour
 {
 
-    public BasicLaunch launch;
+    public GridLaunch launch;
+    public GridLaunch launch1;
     //public GameObject[] spawnpos;
 
     // Start is called before the first frame update
     void Start()
     {
-        launch = GetComponent<BasicLaunch>();
+        launch = GetComponent<GridLaunch>();
        // spawnpos = GameObject.FindGameObjectsWithTag("MissilePod");
 
         //launch.missilePod1 = spawnpos[0].transform;
@@ -22,7 +23,8 @@ public class ShooterButton : MonoBehaviour
     {
         if (other.tag == "Hand")
         {
-            launch.FireDaGun();
+            launch.LaunchMissiles();
+            launch1.LaunchMissiles();
             
         }
     }

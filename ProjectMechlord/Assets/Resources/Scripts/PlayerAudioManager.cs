@@ -16,7 +16,7 @@ public class PlayerAudioManager : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         start = Resources.Load("Sounds/engineStart") as AudioClip;
         engine = Resources.Load("Sounds/mixedEngineIdle") as AudioClip;
-
+        playerAudio.volume = .2f;
         StartCoroutine(playEngineSound());
         
 

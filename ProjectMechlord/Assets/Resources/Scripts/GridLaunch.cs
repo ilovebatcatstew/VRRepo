@@ -44,7 +44,7 @@ public class GridLaunch : MonoBehaviour
 
         objectSpawnPosition = gameObject.transform;
 
-        StartCoroutine(DebugLaunchVolley());
+        //StartCoroutine(DebugLaunchVolley());
 
         //StartCoroutine(LaunchVolley());
         //Instantiate(launchObject, transform.position, transform.rotation);
@@ -64,6 +64,11 @@ public class GridLaunch : MonoBehaviour
         //    StartCoroutine(LaunchVolley());
         //    timer = 0;
         //}
+    }
+
+    public void LaunchMissiles()
+    {
+        StartCoroutine(DebugLaunchVolley());
     }
 
     IEnumerator DebugLaunchVolley()

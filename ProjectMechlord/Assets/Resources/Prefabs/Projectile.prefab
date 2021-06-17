@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4355380726111042706}
   - component: {fileID: 4355380726111042707}
   - component: {fileID: -2932966441196814597}
-  - component: {fileID: 6712348768640655575}
+  - component: {fileID: 8304126458005784934}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Missile
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4355380726111042708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8838286, y: 0.28857318, z: 0.27132025}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,6 +113,8 @@ MonoBehaviour:
   projectileSpeed: 1
   range: 10
   explosionRadius: 0.5
+  explosion: {fileID: 3522627527595274248, guid: d0b5a8cda9cb8bd44889f0dbec296cee, type: 3}
+  smokeTrailPrefab: {fileID: 3999653106412235662, guid: be436be527b8e624b8367a0dbc3d78f3, type: 3}
 --- !u!54 &-2932966441196814597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +131,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &6712348768640655575
+--- !u!82 &8304126458005784934
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,11 +140,11 @@ AudioSource:
   m_GameObject: {fileID: 4355380726111042708}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: ec12f7772c03e4c4c9e4c2f1643595ad, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 022d19c3a7409e94897fb9436a96b2ae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.9
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
