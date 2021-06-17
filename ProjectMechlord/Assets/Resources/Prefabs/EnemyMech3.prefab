@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51fb9aead73d5344bf1056423db5f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 0}
   playerTransform: {fileID: 0}
-  enemySpeed: 100
 --- !u!195 &35732390
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Transform:
   m_LocalScale: {x: 0.89, y: 0.89, z: 0.89}
   m_Children: []
   m_Father: {fileID: 763626482355033549}
-  m_RootOrder: 36
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7753702318858987958
 MeshFilter:
@@ -195,7 +195,7 @@ Transform:
   m_LocalScale: {x: 0.89, y: 0.89, z: 0.89}
   m_Children: []
   m_Father: {fileID: 763626482355033549}
-  m_RootOrder: 35
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6685492331916185262
 MeshFilter:
@@ -309,10 +309,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 231883046206007021, guid: 9039e9fe4b61bc34891c8346b8db4e53, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f6ae2be25371db4a90bcd3bae5c9bc1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9039e9fe4b61bc34891c8346b8db4e53, type: 3}
       propertyPath: m_Name
       value: EnemyMech_3_V1
       objectReference: {fileID: 0}
+    - target: {fileID: 5683693018056729637, guid: 9039e9fe4b61bc34891c8346b8db4e53, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f6ae2be25371db4a90bcd3bae5c9bc1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9039e9fe4b61bc34891c8346b8db4e53, type: 3}
 --- !u!4 &763626482355033549 stripped
