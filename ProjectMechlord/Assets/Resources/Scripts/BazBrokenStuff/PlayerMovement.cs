@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         //Movement Code
         {
-       // isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-       //
-       // if (isGrounded && vel.y < 0)
-       // {
-       //     vel.y = -2f;
-       // }
+            // isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            //
+            // if (isGrounded && vel.y < 0)
+            // {
+            //     vel.y = -2f;
+            // }
 
             //float xMovement = Input.GetAxis("Horizontal");
             //float zMovement = Input.GetAxis("Vertical");
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     public void RotR()
     {
         gameObject.transform.Rotate(0, 25f, 0);
+
     }
-
-
 }
+
