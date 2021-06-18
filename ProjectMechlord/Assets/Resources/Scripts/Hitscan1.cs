@@ -16,10 +16,14 @@ public class Hitscan1 : MonoBehaviour
 
     AudioSource gunAudio;
 
+    public bool fire = false;
+
     void Awake()
     {
         mouse = Mouse.current;
     }
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,15 +34,24 @@ public class Hitscan1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand" || fire)
         {
             FireCannons();
 
         }
     }
+    void Update()
+    {
+        if (fire)
+        {
+            FireCannons();
+        }
+    }
 
     public void FireCannons()
     {
+        
+
         gunAudio.Play();
         int layerMask = 1 << 8;
 
@@ -88,7 +101,7 @@ public class Hitscan1 : MonoBehaviour
         {
             endPosition = raycastHit.point;
         }
-        Vector3 temp = new Vector3(15.0f, 0, 0);
+        Vector3 temp = new Vector3(0, 0, 15.0f);
         bulletLines.SetPosition(0, targetPosition);
         bulletLines.SetPosition(1, (targetPosition += temp));
 

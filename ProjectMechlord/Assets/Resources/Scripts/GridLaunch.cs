@@ -56,6 +56,7 @@ public class GridLaunch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DebugVolley();
     }
 
     private void FixedUpdate()
@@ -97,10 +98,42 @@ public class GridLaunch : MonoBehaviour
         {
             for (int y = 0; y < rows; y++)
             {
-                Debug.DrawLine(transform.position + right * (-xStartPos + (x * columnOffset)) + up *(yStartPos - (y * rowOffset)), transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)) + forward, Color.white);
+                Debug.DrawLine(transform.position + right * (-xStartPos + (x * columnOffset)) + up *(yStartPos - (y * rowOffset)), transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)) + forward*100, Color.white);
                 Instantiate(launchObject, transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)), gameObject.transform.rotation);
                 podAudio.Play();
                 yield return new WaitForSeconds(launchInterval);
+            }
+        }
+
+
+    }
+   void DebugVolley()
+    {
+        Vector3 right = transform.right;
+        Vector3 up = transform.up;
+        Vector3 forward = transform.forward;
+
+
+        float xOffset = width / columns;
+        float yOffset = height / rows;
+
+        float smallerWidth = width - 2 * xOffset;
+        float smallerHeight = height - 2 * yOffset;
+
+        float xStartPos = smallerWidth * 0.5f;
+        float yStartPos = smallerHeight * 0.5f;
+
+        float columnOffset = smallerWidth / (columns - 1);
+        float rowOffset = smallerHeight / (rows - 1);
+
+        for (int x = 0; x < columns; x++)
+        {
+            for (int y = 0; y < rows; y++)
+            {
+                Debug.DrawLine(transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)), transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)) + forward, Color.white);
+                //Instantiate(launchObject, transform.position + right * (-xStartPos + (x * columnOffset)) + up * (yStartPos - (y * rowOffset)), gameObject.transform.rotation);
+                podAudio.Play();
+               // yield return new WaitForSeconds(launchInterval);
             }
         }
 

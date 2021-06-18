@@ -32,7 +32,7 @@ public class EnemyShoot : MonoBehaviour
 
         distanceFromPlayer = Vector3.Distance(transform.position, enemy.destination);
 
-        Debug.Log("The distance of the enemy from the player is: " + distanceFromPlayer);
+       // Debug.Log("The distance of the enemy from the player is: " + distanceFromPlayer);
 
         facing = transform.forward;
         directionToPlayer = enemy.destination - enemy.transform.position;
@@ -40,15 +40,15 @@ public class EnemyShoot : MonoBehaviour
         directionToPlayer =  Vector3.Normalize(directionToPlayer);
 
 
-        Debug.Log("The enemy is facing: " + facing);
-        Debug.Log("The direction to the player is: " + directionToPlayer);
+       // Debug.Log("The enemy is facing: " + facing);
+       // Debug.Log("The direction to the player is: " + directionToPlayer);
         
 
         // This thing needs to work only for two axes,  (ie the x and z axes)
         float enemyFacingTowardPlayer = Vector3.Dot(facing, directionToPlayer); // Experimental, could be broken and make things not work
                                                                                 // But essentially this should determin whether the enemy is facing the player
 
-        Debug.Log("The dot Product of the enemy's facing and the direction to the player is:" + enemyFacingTowardPlayer);
+        //Debug.Log("The dot Product of the enemy's facing and the direction to the player is:" + enemyFacingTowardPlayer);
 
         // The 'distanceFromPlayer' portion should intelligently check how far away from the player (or destination)
         // The 'enemyFacingTowardPlayer' portion is the logic that checks whether the enemy is facing the player as stated above, though it could not work properly and requires a bit of testing.

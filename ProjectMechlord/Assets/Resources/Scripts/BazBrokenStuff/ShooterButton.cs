@@ -9,10 +9,11 @@ public class ShooterButton : MonoBehaviour
     public GridLaunch launch1;
     //public GameObject[] spawnpos;
 
+    public bool fire = false;
     // Start is called before the first frame update
     void Start()
     {
-        launch = GetComponent<GridLaunch>();
+        //launch = GetComponent<GridLaunch>();
        // spawnpos = GameObject.FindGameObjectsWithTag("MissilePod");
 
         //launch.missilePod1 = spawnpos[0].transform;
@@ -27,14 +28,21 @@ public class ShooterButton : MonoBehaviour
             launch1.LaunchMissiles();
             
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+    void Update()
+    {
+        if (fire)
+        {
+            launch.LaunchMissiles();
+            launch1.LaunchMissiles();
+            fire = false;
+        }
+    }
+    // Update is called once per frame
 
 
-  
+
+
 
 }

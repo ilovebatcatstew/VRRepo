@@ -68,15 +68,18 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
-        expAudio.Play();
+       // Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
+       // expAudio.Play();
 
         Collider[] collisions = Physics.OverlapSphere(transform.position, explosionRadius);
+        Debug.Log(other.gameObject.name);
         foreach (Collider hit in collisions)
         {
             if (hit.tag == "Enemy")
             {
                 Destroy(hit.gameObject);
+                Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
+                expAudio.Play();
             }
         }    
         
@@ -85,6 +88,8 @@ public class Projectile : MonoBehaviour
             if(!other.gameObject.CompareTag("MissilePod"))
             {
                 Destroy(gameObject);
+                Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
+                expAudio.Play();
             }
         }
 
