@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyType: 1
   maxHealth: 50
   currenthealth: 50
-  movespeed: 50
+  movespeed: 5
   damage: 10
