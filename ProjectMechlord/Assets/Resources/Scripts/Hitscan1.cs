@@ -7,7 +7,10 @@ public class Hitscan1 : MonoBehaviour
 {
     public Transform gunTransform1;
     public Transform gunTransform2;
-    
+
+    public GameObject gunParticleEffect;
+
+
     Mouse mouse;
 
     public LineRenderer bulletLines;
@@ -60,6 +63,9 @@ public class Hitscan1 : MonoBehaviour
         ShootLineFromTargetPosition(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward, lineMaxLength);
         ShootLineFromTargetPosition(gunTransform2.position + (gunTransform2.forward * (gunTransform2.localScale.z * 0.5f)), gunTransform2.forward, lineMaxLength);
 
+        Instantiate(gunParticleEffect, gunTransform1);
+        Instantiate(gunParticleEffect, gunTransform2);
+
         if (Physics.Raycast(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward, out hit, 10, layerMask))
         {
             Debug.DrawRay(gunTransform1.position + (gunTransform1.forward * (gunTransform1.localScale.z * 0.5f)), gunTransform1.forward * 10, Color.red);
@@ -103,7 +109,8 @@ public class Hitscan1 : MonoBehaviour
         }
         Vector3 temp = new Vector3(0, 0, 15.0f);
         bulletLines.SetPosition(0, targetPosition);
-        bulletLines.SetPosition(1, (targetPosition += temp));
+        bulletLines.SetPosition(1, endPosition);
+        
 
         
     }

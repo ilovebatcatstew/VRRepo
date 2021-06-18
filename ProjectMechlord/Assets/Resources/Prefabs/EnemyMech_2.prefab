@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 4021230899659420228}
   m_Layer: 0
   m_Name: EnemyMech_2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ NavMeshAgent:
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 15
+  m_StoppingDistance: 50
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawnPostion: {fileID: 5214122492244768527}
   fireDelay: 5
-  enemyProjectile: {fileID: 4355380726111042708, guid: a313cd3a404d58f4aa2d2d0a662ab03d, type: 3}
+  enemyProjectile: {fileID: 4355380726111042708, guid: df9c8e19083cca1489f576feb871c9b8, type: 3}
 --- !u!136 &4021230899659420228
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 10
+  m_Radius: 15
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0.94, z: 0}

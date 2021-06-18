@@ -5,13 +5,13 @@ using UnityEngine;
 // Somewhat functioning projectile.
 public class Projectile : MonoBehaviour
 {
-    AudioSource expAudio;
     public float projectileSpeed = 1.0f;
     public float range = 10.0f;
     public float explosionRadius = 0.5f;
 
     public ParticleSystem explosion;
     public GameObject smokeTrailPrefab;
+    public GameObject fireEnd;
 
 
     float distanceTravelled = 0.0f;
@@ -20,8 +20,6 @@ public class Projectile : MonoBehaviour
 
     void Awake()
     {
-        expAudio = GetComponent<AudioSource>();
-        expAudio.loop = false;
         float explosionSize = explosion.shape.radius;
         explosionSize = explosionRadius;
         collider = gameObject.GetComponent<BoxCollider>();
@@ -30,12 +28,13 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         float length = transform.localScale.z;
 
         smokeTrailPrefab.transform.localPosition = new Vector3(0, 0, -0.5f);
+        fireEnd.transform.localPosition = new Vector3(0, 0, -0.5f);
 
         Instantiate(smokeTrailPrefab, gameObject.transform);
+        Instantiate(fireEnd, gameObject.transform);
 
         //smokeTrailPrefab.transform.parent = gameObject.transform;
     }
@@ -68,18 +67,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       // Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
-       // expAudio.Play();
-
+        
         Collider[] collisions = Physics.OverlapSphere(transform.position, explosionRadius);
-        Debug.Log(other.gameObject.name);
         foreach (Collider hit in collisions)
         {
-            if (hit.tag == "Enemy")
+            if (other.tag == "Enemy")
             {
-                Destroy(hit.gameObject);
+                Destroy(other.gameObject);
                 Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
-                expAudio.Play();
             }
         }    
         
@@ -89,7 +84,6 @@ public class Projectile : MonoBehaviour
             {
                 Destroy(gameObject);
                 Instantiate(explosion, gameObject.transform.position, explosion.gameObject.transform.rotation);
-                expAudio.Play();
             }
         }
 

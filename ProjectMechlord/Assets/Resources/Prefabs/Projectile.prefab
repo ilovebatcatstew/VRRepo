@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4355380726111042707}
   - component: {fileID: -2932966441196814597}
   - component: {fileID: 8304126458005784934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Missile
   m_Icon: {fileID: 0}
@@ -113,8 +113,9 @@ MonoBehaviour:
   projectileSpeed: 1
   range: 10
   explosionRadius: 0.5
-  explosion: {fileID: 3522627527595274248, guid: d0b5a8cda9cb8bd44889f0dbec296cee, type: 3}
-  smokeTrailPrefab: {fileID: 3999653106412235662, guid: be436be527b8e624b8367a0dbc3d78f3, type: 3}
+  explosion: {fileID: 3999646881462400645, guid: bb0bce5810f0df543bd738285f5109a0, type: 3}
+  smokeTrailPrefab: {fileID: 8036864506257130560, guid: a4d026ad66996954481313d38064fb37, type: 3}
+  fireEnd: {fileID: 5030243680919005898, guid: 5baf1599f681df34988ef4fddf58da5c, type: 3}
 --- !u!54 &-2932966441196814597
 Rigidbody:
   m_ObjectHideFlags: 0
